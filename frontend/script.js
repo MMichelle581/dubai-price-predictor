@@ -1,7 +1,7 @@
 // 1. Configuration: Set the API URL based on environment
 const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:5000'
-    : 'https://YOUR-APP.onrender.com'; // Change this once deployed
+    : 'https://dubai-price-predictor.onrender.com/'; // Change this once deployed
 
 // 2. Full Neighborhood Data
 const allNeighborhoods = [
@@ -75,7 +75,7 @@ predictionForm.addEventListener('submit', async (e) => {
 
     try {
         // Note: Using the dynamic API_URL variable here
-        const response = await fetch(`${API_URL}/predict`, {
+        const response = await fetch('https://dubai-price-predictor.onrender.com/predict', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
