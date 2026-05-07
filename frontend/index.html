@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubai Property Valuator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-static"></div>
+    <div class="overlay"></div>
+
+    <div class="luxury-container">
+        <header>
+            <h1>Dubai Property Valuator</h1>
+            <p class="subtitle">AI-powered market analysis for luxury real estate</p>
+        </header>
+
+        <form id="predictionForm">
+            <div class="input-group">
+                <label>NEIGHBORHOOD</label>
+                <div class="searchable-dropdown">
+                    <input type="text" id="nbhdSearch" placeholder="Search neighborhood..." onfocus="showList()" onkeyup="filterList()" autocomplete="off">
+                    <ul id="nbhdList" class="hidden">
+                        <li onclick="selectNbhd('Dubai Marina')">Dubai Marina</li>
+                        <li onclick="selectNbhd('Palm Jumeirah')">Palm Jumeirah</li>
+                        <li onclick="selectNbhd('Downtown Dubai')">Downtown Dubai</li>
+                        <li onclick="selectNbhd('Business Bay')">Business Bay</li>
+                        <li onclick="selectNbhd('Jumeirah Village Circle')">Jumeirah Village Circle</li>
+                        </ul>
+                    <input type="hidden" id="neighborhood" value="Dubai Marina">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>TOTAL AREA (SQFT)</label>
+                <input type="number" id="size" placeholder="e.g. 1200" required>
+            </div>
+
+            <div class="grid-inputs">
+                <div class="input-group">
+                    <label>BEDROOMS</label>
+                    <input type="number" id="bedrooms" value="2" min="1">
+                </div>
+                <div class="input-group">
+                    <label>BATHROOMS</label>
+                    <input type="number" id="bathrooms" value="2" min="1">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>FINISH QUALITY</label>
+                <select id="quality">
+                    <option value="Low">Standard / Low</option>
+                    <option value="Medium" selected>Modern / Medium</option>
+                    <option value="High">Premium / High</option>
+                    <option value="Ultra">Ultra Luxury</option>
+                </select>
+            </div>
+
+            <button type="submit" id="predictBtn">Estimate Price</button>
+        </form>
+
+        <div id="result" class="result-box hidden">
+            <span class="result-label">ESTIMATED VALUE:</span>
+            <p id="priceText">--</p>
+            <span class="currency-note">All prices in UAE Dirhams (AED)</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
