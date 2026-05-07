@@ -1,0 +1,9 @@
+# Create a file called .gitignore in your project folder
+# and paste this content into it:
+
+venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+properties.csv
